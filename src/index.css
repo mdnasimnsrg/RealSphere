@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+input {
+  outline: none;
+}
+textarea {
+  outline: none;
+}
+select {
+  outline: none;
+}
+.scrollbar-hide {
+  scrollbar-width: none;
+}
+/* Custom Scrollbar for Webkit Browsers (Chrome, Safari) */
+.sc-fkSzgi::-webkit-scrollbar {
+  width: 4px;
+}
+
+.sc-fkSzgi::-webkit-scrollbar-thumb {
+  background: #006693;
+  border-radius: 10px;
+}
+
+.sc-fkSzgi::-webkit-scrollbar-thumb:hover {
+  background: #006693;
+}
+
+.sc-fkSzgi::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 10px;
+}
+
+.sc-fkSzgi .MuiDataGrid-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #006693 transparent;
+}
