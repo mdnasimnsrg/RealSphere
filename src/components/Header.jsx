@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FiBell, FiMenu } from "react-icons/fi";
 import logo from "../images/logo/logo.png";
+import logo1 from "../images/logo/logo_name.png";
 import CustomModal from "./CustomModal";
 import { CheckCircle } from "@mui/icons-material";
 import { Link } from "react-router-dom";
@@ -27,8 +28,9 @@ const Header = ({ selectedModule, handleModuleChange, toggleSidebar }) => {
           >
             <FiMenu />
           </button>
-          <div className="py-3">
-            <img src={logo} alt="Logo" className="h-full w-20" />
+          <div className="flex items-center">
+            <img src={logo} alt="Logo" className="w-8 h-8 animate-rotate" />
+            <img src={logo1} alt="Logo" className="w-16 h-12 mt-4 ml-1" />
           </div>
           <span className="text-white-400 text-sm hidden md:inline">
             Property And Facility Management Demo Instance
@@ -106,7 +108,7 @@ const Header = ({ selectedModule, handleModuleChange, toggleSidebar }) => {
               <Link
                 to={module.href ? module.href : "/"}
                 key={module.name + i}
-                className={`flex items-center border-2 rounded-lg p-4 cursor-pointer transition-all w-full md:w-fit
+                className={`flex items-center border-2 rounded-lg p-4 cursor-pointer transition-all w-full md:w-fit  
       ${
         selectedModule === module.name
           ? "border-red-500 shadow-md"
@@ -139,4 +141,3 @@ const Header = ({ selectedModule, handleModuleChange, toggleSidebar }) => {
 };
 
 export default Header;
-

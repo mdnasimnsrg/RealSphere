@@ -74,7 +74,6 @@ const modules = [
         name: "Work Order Management",
         icon: <FiTool />,
         subLinks: [
-          { href: "/work-orders", name: "Work Order Management" },
           { href: "/onboard-move-in", name: "Onboard and Move-in" },
           {
             href: "/offboard-move-out",
@@ -87,8 +86,8 @@ const modules = [
           { href: "/unit-handover", name: "Unit Handover" },
           { href: "/unit-readiness", name: "Unit Readiness" },
           {
-            href: "/general-",
-            name: "General  Jobs",
+            href: "/general-inspection-jobs",
+            name: "General Inspection Jobs",
           },
         ],
       },

@@ -22,7 +22,7 @@ module.exports = {
         'width24%': '24%',
       },
       colors: {
-        themeBlue: '#3D3D3D',
+        themeBlue: '#006693',
         light: {
           DEFAULT: '#F5F5F5',
           50: '#FFFFFF',
@@ -42,14 +42,14 @@ module.exports = {
           600: '#2563eb',
           500: '#3b82f6',
           400: '#60a5fa',
-          300: '#93c5fd',
+          300: '#93c5fd', 
           200: '#bfdbfe',
           100: '#dbeafe',
           50: '#f1f3fe',
           25: '#eaedfd'
         },
       },
-
+      
       animation: {
         rotate: "rotateClockwise 2s linear infinite",
       },

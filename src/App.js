@@ -129,20 +129,10 @@ import ResourceBoard from "./components/ImPlanner/ResourceBoard";
 import ScheduleBoard from "./components/ImPlanner/ScheduleBoard";
 import LeaveTimeOffBoard from "./components/ImPlanner/LeaveTimeOffBoard";
 import DutyRoasterBoard from "./components/ImPlanner/DutyRosterBoard";
-
 import ClientDashboard from "./components/bireportmanagement/dashboard/ClientDashboard";
 import CommunityDashboard from "./components/bireportmanagement/dashboard/CommunityManager";
 import FinanceManager from "./components/bireportmanagement/dashboard/FinanceManager";
 import InspectionManager from "./components/bireportmanagement/dashboard/InspectionManager";
-
-import AllContacts from "./components/contacts/AllContacts";
-import ContactCustomers from "./components/contacts/Customers";
-import ContactOwners from "./components/contacts/Owners";
-import ContactBrokerAgents from "./components/contacts/BrokerAgents";
-import ContactProspects from "./components/contacts/Prospects";
-import ContactVendorProfile from "./components/contacts/VendorProfile";
-import ContactServiceProviderProfile from "./components/contacts/ServiceProviderProfile";
-import ContactPublicContactsDirectory from "./components/contacts/PublicContactsDirectory";
 import ContractManager from "./components/bireportmanagement/dashboard/ContractManager";
 import UtilityManager from "./components/bireportmanagement/dashboard/UtilityManager";
 import SecurityManager from "./components/bireportmanagement/dashboard/SecurityManager";
@@ -153,6 +143,29 @@ import PropertyDetails from "./components/bireportmanagement/planner/PropertyDet
 import ActivityBoard from "./components/bireportmanagement/planner/ActivityBoard";
 import AnnouncementBoard from "./components/bireportmanagement/planner/AnnouncementBoard";
 import BiReportManagementResourseBoard from "./components/bireportmanagement/planner/ResourseBoard";
+import AllContacts from "./components/contacts/AllContacts";
+import ContactCustomers from "./components/contacts/Customers";
+import ContactOwners from "./components/contacts/Owners";
+import ContactBrokerAgents from "./components/contacts/BrokerAgents";
+import ContactProspects from "./components/contacts/Prospects";
+import ContactVendorProfile from "./components/contacts/VendorProfile";
+import ContactServiceProviderProfile from "./components/contacts/ServiceProviderProfile";
+import ContactPublicContactsDirectory from "./components/contacts/PublicContactsDirectory";
+import OnboardMoveIn from "./components/ImWorkOrderManagement/OnboardMoveIn";
+import DetailsOnboardMoveIn from "./components/ImWorkOrderManagement/DetailsOnboardMoveIn";
+import InnerDetailsOnboardMoveIn from "./components/ImWorkOrderManagement/InnerDetailsOnboardMoveIn";
+import OffboardMoveOut from "./components/ImWorkOrderManagement/OffboardMoveout";
+import DetailsOffboardMoveOut from "./components/ImWorkOrderManagement/DetailsOffboardMoveout";
+import InnerDetailsOffboardMoveOut from "./components/ImWorkOrderManagement/InnerDetailsOffboardMoveout";
+import ShowcaseSiteVisit from "./components/ImWorkOrderManagement/ShowcaseSiteVisit";
+import DetailsShowcaseSiteVisit from "./components/ImWorkOrderManagement/DetailsShowcaseSiteVisit";
+import UnitHandOver from "./components/ImWorkOrderManagement/UnitHandover";
+import DetailsUnitHandOver from "./components/ImWorkOrderManagement/DetailsUnitHandover";
+import InnerDetailsUnitHandOver from "./components/ImWorkOrderManagement/InnerDetailsUnitHandover";
+import UnitReadiness from "./components/ImWorkOrderManagement/UnitReadiness";
+import DetailsUnitReadiness from "./components/ImWorkOrderManagement/DetailsUnitReadiness";
+import GeneralInspectionJobs from "./components/ImWorkOrderManagement/GeneralInspectionJobs";
+import DetailsGeneralInspectionJobs from "./components/ImWorkOrderManagement/DetailsGeneralInspectionJobs";
 
 const App = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -538,18 +551,24 @@ const App = () => {
               <Route path="/owners" element={<ContactOwners />} />
               <Route path="/broker-agents" element={<ContactBrokerAgents />} />
               <Route path="/prospects" element={<ContactProspects />} />
-              <Route
-                path="/vendor-profile"
-                element={<ContactVendorProfile />}
-              />
-              <Route
-                path="/service-provider"
-                element={<ContactServiceProviderProfile />}
-              />
-              <Route
-                path="/public-contacts"
-                element={<ContactPublicContactsDirectory />}
-              />
+              <Route path="/vendor-profile" element={<ContactVendorProfile />} />
+              <Route path="/service-provider" element={<ContactServiceProviderProfile />} />
+              <Route path="/public-contacts" element={<ContactPublicContactsDirectory />} />
+              <Route path="/onboard-move-in" element={<OnboardMoveIn />} />
+              <Route path="/onboard-move-in-details" element={<DetailsOnboardMoveIn />} />
+              <Route path="/onboard-move-inner-details" element={<InnerDetailsOnboardMoveIn />} />
+              <Route path="/offboard-move-out" element={<OffboardMoveOut />} />
+              <Route path="/offboard-move-out-details" element={<DetailsOffboardMoveOut />} />
+              <Route path="/offboard-move-inner-details" element={<InnerDetailsOffboardMoveOut />} />
+              <Route path="/showcase-site-visit" element={<ShowcaseSiteVisit />} />
+              <Route path="/showcase-site-visit-details" element={<DetailsShowcaseSiteVisit />} />
+              <Route path="/unit-handover" element={<UnitHandOver />} />
+              <Route path="/unit-handover-details" element={<DetailsUnitHandOver />} />
+              <Route path="/unit-handover-inner-details" element={<InnerDetailsUnitHandOver />} />
+              <Route path="/unit-readiness" element={<UnitReadiness />} />
+              <Route path="/unit-readiness-details" element={<DetailsUnitReadiness />} />
+              <Route path="/general-inspection-jobs" element={<GeneralInspectionJobs />} />
+              <Route path="/general-inspection-jobs-details" element={<DetailsGeneralInspectionJobs />} />
 
               <Route
                 path="/"
