@@ -88,7 +88,9 @@ const BiReportManagementResourseBoard = () => {
   return (
     <div className=" bg-gray-100 min-h-screen">
   <div className="bg-white p-4 w-full flex justify-between items-center flex-col md:flex-row gap-4">
-                <p className="font-semibold">Resource Board</p>
+                <p className="font-semibold">Schedule Board
+
+</p>
 
 
 
