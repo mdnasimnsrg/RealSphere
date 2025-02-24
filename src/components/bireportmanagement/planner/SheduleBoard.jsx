@@ -13,64 +13,16 @@ import React from "react";
 import { useState } from "react";
 import { FiCalendar, FiFilter, FiUser, FiX } from "react-icons/fi";
 import AccessTimeOutlinedIcon from "@mui/icons-material/AccessTimeOutlined";
-
+import {FcOrganization} from "react-icons/fc"
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 import CustomSelect from "../../ui/CustomSelect";
 
-const users = [
-  {
-    name: "Naveenraj Murugan",
-    role: "Security guard",
-    initials: "NM",
-    timeOff: {
-      type: "Week Off Days",
-      date: "2025-02-25",
-    },
-  },
-  {
-    name: "Prathamesh K",
-    role: "Generic Job",
-    initials: "PK",
-    timeOff: {
-      type: "Time Off Day",
-      date: "2025-02-26",
-    },
-  },
-  {
-    name: "Hari Arunachalam",
-    role: "Generic Job",
-    img: "https://via.placeholder.com/40",
-    timeOff: {
-      type: "Week Off Days",
-      date: "2025-02-27",
-    },
-  },
-  {
-    name: "Janah Adil Eishiger",
-    role: "Inspector",
-    initials: "JA",
-    timeOff: {
-      type: "Time Off Day",
-      date: "2025-02-28",
-    },
-  },
-  {
-    name: "Suriya",
-    role: "Generic Job",
-    initials: "S",
-    timeOff: {
-      type: "Week Off Days",
-      date: "2025-02-29",
-    },
-  },
-];
 
 const BiReportManagementSheduleBoard = () => {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [showFilter, setShowFilter] = useState(false);
-  const [selectedDepartments, setSelectedDepartments] = useState([]);
+  const [selectedResource, setSelectedResourese] = useState([]);
   const [selectedJobs, setSelectedJobs] = useState([]);
-  const [selectedProfessions, setSelectedProfessions] = useState([]);
   const getWeekDates = (date) => {
     const startOfWeek = new Date(date);
     startOfWeek.setDate(date.getDate() - date.getDay());
@@ -106,8 +58,10 @@ const BiReportManagementSheduleBoard = () => {
     <div className=" bg-gray-100 min-h-screen">
       <div className="bg-white p-4 w-full flex justify-between items-center flex-col md:flex-row gap-4">
         <p className="font-semibold">Schedule Board</p>
-
+<div>
         <CustomSelect options={["Business Development"]} icon={<FiUser />} />
+        <CustomSelect options={["All Properties"]} icon={<FcOrganization />} />
+</div>
       </div>
       <div className="p-4">
         <div className="bg-white shadow rounded-lg overflow-x-auto p-4">
@@ -156,7 +110,7 @@ const BiReportManagementSheduleBoard = () => {
             </div>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-8 font-semibold text-gray-700 text-sm md:text-base">
-            <div className=" border p-2 md:p-4"><AccessTimeOutlinedIcon/></div>
+            <div className=" border p-2 md:p-4 flex justify-center items-center"><AccessTimeOutlinedIcon/></div>
             {dates.map((date, index) => (
               <div
                 key={index}
@@ -171,9 +125,25 @@ const BiReportManagementSheduleBoard = () => {
           </div>
 
           <div>
-            {times.map((time, index) => (
-             <div key={time.id + index} classNames="p-2 border">{time.initials}</div>
-            ))}
+ <div>
+        {times.map((time, index) => (
+  <div
+    key={index}
+    className="grid grid-cols-2 md:grid-cols-8 items-center text-sm md:text-base"
+  >
+    <div className="border p-2 h-full flex justify-center items-center">
+
+   {time.initials}
+    </div>
+    {dates.map((date, idx) => {
+
+
+      return <div key={idx} className={`h-14 md:h-20 border`}></div>;
+    })}
+  </div>
+))}
+
+        </div>
           </div>
         </div>
         {showFilter && (
@@ -197,7 +167,7 @@ const BiReportManagementSheduleBoard = () => {
                       htmlFor=""
                       className="text-sm font-semibold text-gray-600"
                     >
-                      Departments
+                      Resourse
                     </label>
                     <CustomSelectOption
                       label="Select Departments"
@@ -207,7 +177,7 @@ const BiReportManagementSheduleBoard = () => {
                       ]}
                       icon={<SearchIcon />}
                       onChange={(e) =>
-                        setSelectedDepartments((prev) =>
+                        setSelectedResourese((prev) =>
                           prev.includes(e.target.value)
                             ? prev.filter((item) => item !== e.target.value)
                             : [...prev, e.target.value]
@@ -215,16 +185,16 @@ const BiReportManagementSheduleBoard = () => {
                       }
                     />
                     <div className="flex gap-3 flex-wrap">
-                      {selectedDepartments.map((property) => {
+                      {selectedResource.map((resourese) => {
                         return (
                           <Chip
-                            key={property}
-                            label={property}
+                            key={resourese}
+                            label={resourese}
                             className="w-fit "
                             color="primary"
                             onDelete={() =>
-                              setSelectedDepartments((prev) =>
-                                prev.filter((item) => item !== property)
+                              setSelectedResourese((prev) =>
+                                prev.filter((item) => item !== resourese)
                               )
                             }
                           />
@@ -238,7 +208,7 @@ const BiReportManagementSheduleBoard = () => {
                       htmlFor=""
                       className="text-sm font-semibold text-gray-600"
                     >
-                      Jobs
+                      Job Type
                     </label>
                     <CustomSelectOption
                       options={[
@@ -273,47 +243,7 @@ const BiReportManagementSheduleBoard = () => {
                     </div>
                     <hr />
                   </div>
-                  <div className="flex flex-col gap-2">
-                    <label
-                      htmlFor=""
-                      className="text-sm font-semibold text-gray-600"
-                    >
-                      Professions
-                    </label>
-                    <CustomSelectOption
-                      label="Select Role"
-                      options={[
-                        { value: "option1", label: "Option 1" },
-                        { value: "option2", label: "Option 2" },
-                      ]}
-                      icon={<SearchIcon />}
-                      onChange={(e) =>
-                        setSelectedProfessions((prev) =>
-                          prev.includes(e.target.value)
-                            ? prev.filter((item) => item !== e.target.value)
-                            : [...prev, e.target.value]
-                        )
-                      }
-                    />
-                    <div className="flex gap-3 flex-wrap">
-                      {selectedProfessions.map((role) => {
-                        return (
-                          <Chip
-                            key={role}
-                            label={role}
-                            className="w-fit "
-                            color="primary"
-                            onDelete={() =>
-                              setSelectedProfessions((prev) =>
-                                prev.filter((item) => item !== role)
-                              )
-                            }
-                          />
-                        );
-                      })}
-                    </div>
-                    <hr />
-                  </div>
+
                 </div>
               </div>
               <Button variant="contained" className="w-full" size="large">
