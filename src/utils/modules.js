@@ -306,7 +306,7 @@ const modules = [
           { href: "/activity-board", name: "Activity Board" },
           { href: "/announcement-board", name: "Announcement Board" },
           { href: "/bi-and-report-management/planner/resource-board", name: "Resource Board" },
-          { href: "/schedule-board", name: "Schedule Board" },
+          { href: "/bi-and-report-management/planner/shedule-board", name: "Schedule Board" },
           { href: "/leave-time-off", name: "Leave & Time Off Board" },
           { href: "/duty-roster", name: "Duty Roster Board" },
           { href: "/amenity-booking", name: "Amenity Booking Board" },
