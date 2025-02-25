@@ -3,7 +3,7 @@ import { FiUser } from "react-icons/fi";
 import dayjs from "dayjs";
 import { Avatar } from "@mui/material";
 import { CheckCircle, Search } from "lucide-react";
-
+import { MdChevronLeft,MdChevronRight} from "react-icons/md"
 const DutyRoasterBoard = () => {
     const [currentDate, setCurrentDate] = useState(dayjs());
 
@@ -53,7 +53,7 @@ const DutyRoasterBoard = () => {
         avatar: "https://via.placeholder.com/40",
     });
     const [selected, setSelected] = useState(1);
-    
+
     const employees = [
         { id: 1, name: "Tobias", role: "Security guard", avatar: "👮‍♂️" },
         { id: 2, name: "Braylon", role: "Inspector", avatar: "🕵️‍♂️" },
@@ -63,7 +63,7 @@ const DutyRoasterBoard = () => {
 
   return (
     <div>
-        <div className="bg-white md:flex items-center justify-between p-4 mb-2">
+        <div className="bg-white flex flex-col md:flex-row gap-2 items-center justify-between p-4 mb-2">
             <div className="text-xl font-semibold">On Duty Allocation</div>
             <div className="flex flex-wrap items-center gap-4">
                 <div className="flex items-center border rounded-md p-2 shadow-sm bg-gray-50">
@@ -79,30 +79,43 @@ const DutyRoasterBoard = () => {
 
             <div className="w-full bg-white p-4 rounded-lg shadow">
 
-                <div className="flex justify-between items-center mb-4">
-                    <div className="flex items-center space-x-4">
-                        <div className="flex items-center bg-gray-100 p-2 rounded-lg">
-                            <Avatar src={resource.avatar} alt={resource.name} />
-                            <div className="ml-2">
+                <div className="flex justify-center md:justify-between flex-col md:flex-row gap-2 items-center mb-4">
+                    <div className="flex items-center gap-2">
+                        <div className="flex items-center bg-gray-100 p-2 rounded-lg min-w-80 justify-between">
+                            <div className="flex gap-2">
+
+                            <Avatar src={resource.avatar} alt={resource.name}/>
+                            <div className="">
                                 <p className="font-semibold">{resource.name}</p>
                                 <p className="text-xs text-gray-500">{resource.id}</p>
+                            </div>
                             </div>
                             <button onClick={toggleModal} className="text-blue-500 ml-2 text-sm">Change</button>
                         </div>
                     </div>
 
+
                     <div className="flex items-center gap-2">
-                        <button onClick={goToPreviousMonth} className="p-2 bg-gray-200 rounded">
-                            ⬅️
-                        </button>
-                        <h2 className="text-xl font-semibold">
-                            {currentDate.format("MMMM YYYY")}
-                        </h2>
-                        <button onClick={goToNextMonth} className="p-2 bg-gray-200 rounded">
-                            ➡️
-                        </button>
-                    </div>
-                    
+            <button
+              onClick={goToPreviousMonth}
+              variant="outlined"
+              className="h-10 w-10 rounded-full bg-white border flex justify-center items-center hover:bg-gray-400"
+            >
+              <MdChevronLeft size={24} />
+            </button>
+
+            <span className="font-semibold">
+            {currentDate.format("MMMM YYYY")}
+            </span>
+
+            <button
+              onClick={goToNextMonth}
+              variant="outlined"
+              className="h-10 w-10 rounded-full bg-white border flex justify-center items-center hover:bg-gray-400"
+            >
+              <MdChevronRight size={24} />
+            </button>
+          </div>
                 </div>
 
                 {/* Calendar Grid */}
@@ -115,7 +128,7 @@ const DutyRoasterBoard = () => {
                 <div className="grid grid-cols-7 text-center mt-2">{generateDays()}</div>
             </div>
         </div>
-        
+
         {isOpen && (
             <div className="fixed inset-0 bg-black bg-opacity-30 flex justify-center items-center z-50">
                 <div className="bg-white w-[500px] rounded-lg shadow-lg p-6 w-3/4 max-w-4xl">
