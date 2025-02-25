@@ -3,7 +3,7 @@ import { FiUser, FiPlus } from "react-icons/fi";
 import dayjs from "dayjs";
 import img from "../../images/2.jpeg";
 import { CheckCircle, Search } from "lucide-react";
-
+import {MdChevronRight,MdChevronLeft} from "react-icons/md"
 const LeaveTimeOffBoard = () => {
     const [currentDate, setCurrentDate] = useState(dayjs());
 
@@ -52,7 +52,7 @@ const LeaveTimeOffBoard = () => {
 
         return days;
     };
-    
+
     const [isOpen, setIsOpen] = useState(false);
     const toggleModal = () => setIsOpen(!isOpen);
 
@@ -85,7 +85,7 @@ const LeaveTimeOffBoard = () => {
     const toggleModal1 = () => setIsOpen1(!isOpen1);
 
     const [selected, setSelected] = useState(1);
-    
+
     const employees = [
         { id: 1, name: "Venkat", role: "Sales Manager", avatar: "V" },
         { id: 2, name: "Asahel", role: "Sales Team", avatar: "A" },
@@ -115,7 +115,7 @@ const LeaveTimeOffBoard = () => {
             </div>
         </div>
 
-        <div className="p-4 bg-gray-100 flex space-x-4">
+        <div className="p-4 bg-gray-100 flex gap-4 flex-col md:flex-row">
             {/* Sidebar */}
             <div className="w-1/4 bg-white p-4 rounded-lg shadow">
                 <div className="flex items-center space-x-6 border-2 border-gray-300 rounded-md shadow p-2">
@@ -134,12 +134,12 @@ const LeaveTimeOffBoard = () => {
                 {/* Statistics Section */}
                 <h4 className="mt-4 font-semibold">Current Year Statistics</h4>
                 <div className="mt-2 p-2 bg-gray-100 rounded flex space-x-2 text-sm">
-                    <div className="flex border-b">
+                    <div className="flex border-b w-full overflow-x-auto scrollbar-hide">
                         {tabs.map((tab) => (
                         <button
                             key={tab.name}
                             onClick={() => setActiveTab(tab.name)}
-                            className={`px-4 py-2 text-sm font-semibold focus:outline-none transition-colors duration-200 ${
+                            className={`px-4 py-2 text-nowrap text-sm font-semibold focus:outline-none transition-colors duration-200 ${
                             activeTab === tab.name ? "border-b-2 border-blue-500 text-blue-600" : "text-gray-500"
                             }`}
                         >
@@ -179,18 +179,28 @@ const LeaveTimeOffBoard = () => {
 
             {/* Calendar Section */}
             <div className="w-3/4 bg-white p-4 rounded-lg shadow">
-                <div className="flex items-center justify-center gap-2">
-                <button onClick={goToPreviousMonth} className="p-2 bg-gray-200 rounded">
-                    ⬅️
-                </button>
-                <h2 className="text-xl font-semibold">
-                    {currentDate.format("MMMM YYYY")}
-                </h2>
-                <button onClick={goToNextMonth} className="p-2 bg-gray-200 rounded">
-                    ➡️
-                </button>
-                </div>
 
+                <div className="flex items-center gap-2 justify-center">
+            <button
+              onClick={goToPreviousMonth}
+              variant="outlined"
+              className="h-10 w-10 rounded-full bg-white border flex justify-center items-center hover:bg-gray-400"
+            >
+              <MdChevronLeft size={24} />
+            </button>
+
+            <span className="font-semibold">
+            {currentDate.format("MMMM YYYY")}
+            </span>
+
+            <button
+              onClick={goToNextMonth}
+              variant="outlined"
+              className="h-10 w-10 rounded-full bg-white border flex justify-center items-center hover:bg-gray-400"
+            >
+              <MdChevronRight size={24} />
+            </button>
+          </div>
                 {/* Calendar Grid */}
                 <div className="grid grid-cols-7 text-center font-semibold mt-4">
                 {["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"].map((day, index) => (
@@ -201,7 +211,7 @@ const LeaveTimeOffBoard = () => {
                 <div className="grid grid-cols-7 text-center mt-2">{generateDays()}</div>
             </div>
         </div>
-        
+
         {isOpen && (
             <div className="fixed inset-0 bg-black bg-opacity-30 flex justify-center items-center z-50">
                 <div className="bg-white w-[800px] rounded-lg shadow-lg p-6 w-3/4 max-w-4xl">
