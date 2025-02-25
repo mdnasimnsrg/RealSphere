@@ -170,6 +170,7 @@ import SheduleBoard from "./components/bireportmanagement/planner/SheduleBoard";
 import BiReportManagementSheduleBoard from "./components/bireportmanagement/planner/SheduleBoard";
 import AmenityBookingBoard from "./components/bireportmanagement/planner/AmenityBookingBoard";
 import ParkingBookingBoard from "./components/bireportmanagement/planner/ParkingBookingBoard";
+import Contract360 from "./components/bireportmanagement/business360/Contract360";
 const App = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [selectedModule, setSelectedModule] = useState("Inspection Management");
@@ -209,6 +210,10 @@ const App = () => {
           />
           <div className="flex-1 bg-gray-100 overflow-y-scroll scrollbar-hide  ">
             <Routes>
+              <Route
+                path="/contract360"
+                element={<Contract360 />}
+              />
               <Route
                 path="/parking-booking-board"
                 element={<ParkingBookingBoard />}

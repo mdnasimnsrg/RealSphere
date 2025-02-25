@@ -36,12 +36,12 @@ select {
 }
 
 .sc-fkSzgi::-webkit-scrollbar-thumb {
-  background: #006693;
+  background: #3D3D3D;
   border-radius: 10px;
 }
 
 .sc-fkSzgi::-webkit-scrollbar-thumb:hover {
-  background: #006693;
+  background: #3D3D3D;
 }
 
 .sc-fkSzgi::-webkit-scrollbar-track {
@@ -51,5 +51,5 @@ select {
 
 .sc-fkSzgi .MuiDataGrid-scrollbar {
   scrollbar-width: thin;
-  scrollbar-color: #006693 transparent;
+  scrollbar-color: #3D3D3D transparent;
 }
