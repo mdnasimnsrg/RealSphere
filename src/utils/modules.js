@@ -148,22 +148,22 @@ const modules = [
         name: "Dashboard",
         icon: <FiHome />,
         subLinks: [
-          { href: "/facility-manager", name: "Facility Manager" },
-          { href: "/resource-manager", name: "Resource Manager" },
-          { href: "/property-manager", name: "Property Manager" },
+          { href: "/mm-facility-manager", name: "Facility Manager" },
+          { href: "/mm-resource-manager", name: "Resource Manager" },
+          { href: "/mm-property-manager", name: "Property Manager" },
         ],
       },
       {
         name: "Planner",
         icon: <FiCalendar />,
         subLinks: [
-          { href: "/resource-board", name: "Resource Board" },
-          { href: "/schedule-board", name: "Schedule Board" },
+          { href: "/mm-resource-board", name: "Resource Board" },
+          { href: "/mm-schedule-board", name: "Schedule Board" },
           {
-            href: "/leave-time-off",
+            href: "/mm-leave-time-off",
             name: "Leave & Time Off Board",
           },
-          { href: "/duty-roster", name: "Duty Roster Board" },
+          { href: "/mm-duty-roster", name: "Duty Roster Board" },
         ],
       },
       {
