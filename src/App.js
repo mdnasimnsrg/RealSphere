@@ -177,6 +177,7 @@ import MMResourceBoard from "./components/maintenancemanagement/planner/MMResour
 import MMScheduleBoard from "./components/maintenancemanagement/planner/MMScheduleBoard";
 import MMLeaveTimeOffBoard from "./components/maintenancemanagement/planner/MMLeaveTimeOffBoard";
 import MMDutyRoasterBoard from "./components/maintenancemanagement/planner/MMDutyRosterBoard";
+import Contract360 from "./components/bireportmanagement/business360/Contract360";
 const App = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [selectedModule, setSelectedModule] = useState("Inspection Management");
@@ -216,6 +217,10 @@ const App = () => {
           />
           <div className="flex-1 bg-gray-100 overflow-y-scroll scrollbar-hide  ">
             <Routes>
+              <Route
+                path="/contract360"
+                element={<Contract360 />}
+              />
               <Route
                 path="/parking-booking-board"
                 element={<ParkingBookingBoard />}
