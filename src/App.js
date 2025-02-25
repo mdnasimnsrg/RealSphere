@@ -170,6 +170,13 @@ import SheduleBoard from "./components/bireportmanagement/planner/SheduleBoard";
 import BiReportManagementSheduleBoard from "./components/bireportmanagement/planner/SheduleBoard";
 import AmenityBookingBoard from "./components/bireportmanagement/planner/AmenityBookingBoard";
 import ParkingBookingBoard from "./components/bireportmanagement/planner/ParkingBookingBoard";
+import MMFacilityManagerDashboard from "./components/maintenancemanagement/dashboard/MMFacilityManager";
+import MMResourceManagerDashboard from "./components/maintenancemanagement/dashboard/MMResourceManager";
+import MMPropertyManagerDashboard from "./components/maintenancemanagement/dashboard/MMPropertyManager";
+import MMResourceBoard from "./components/maintenancemanagement/planner/MMResourceBoard";
+import MMScheduleBoard from "./components/maintenancemanagement/planner/MMScheduleBoard";
+import MMLeaveTimeOffBoard from "./components/maintenancemanagement/planner/MMLeaveTimeOffBoard";
+import MMDutyRoasterBoard from "./components/maintenancemanagement/planner/MMDutyRosterBoard";
 import Contract360 from "./components/bireportmanagement/business360/Contract360";
 const App = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -589,6 +596,13 @@ const App = () => {
               <Route path="/unit-readiness-details" element={<DetailsUnitReadiness />} />
               <Route path="/general-inspection-jobs" element={<GeneralInspectionJobs />} />
               <Route path="/general-inspection-jobs-details" element={<DetailsGeneralInspectionJobs />} />
+              <Route path="/mm-facility-manager" element={<MMFacilityManagerDashboard />} />
+              <Route path="/mm-resource-manager" element={<MMResourceManagerDashboard />} />
+              <Route path="/mm-property-manager" element={<MMPropertyManagerDashboard />} />
+              <Route path="/mm-resource-board" element={<MMResourceBoard />} />
+              <Route path="/mm-schedule-board" element={<MMScheduleBoard />} />
+              <Route path="/mm-leave-time-off" element={<MMLeaveTimeOffBoard />} />
+              <Route path="/mm-duty-roster" element={<MMDutyRoasterBoard />} />
 
               <Route
                 path="/"
