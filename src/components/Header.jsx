@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { FiBell, FiMenu } from "react-icons/fi";
 import logo from "../images/logo/logo.png";
-import logo1 from "../images/logo/logo_name.png";
 import CustomModal from "./CustomModal";
 import { CheckCircle } from "@mui/icons-material";
 import { Link } from "react-router-dom";
@@ -21,16 +20,16 @@ const Header = ({ selectedModule, handleModuleChange, toggleSidebar }) => {
   return (
     <>
       <div className="bg-themeBlue text-white shadow-md px-4 flex items-center justify-between z-40 sticky top-0">
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center gap-x-4">
           <button
             onClick={toggleSidebar}
             className="text-white text-xl flex items-center focus:outline-none lg:hidden"
           >
             <FiMenu />
           </button>
-          <div className="flex items-center">
-            <img src={logo} alt="Logo" className="w-8 h-8 animate-rotate" />
-            <img src={logo1} alt="Logo" className="w-16 h-12 mt-4 ml-1" />
+          <div className="py-3">
+            <img src={logo} alt="Logo" className="h-full w-20" />
+
           </div>
           <span className="text-white-400 text-sm hidden md:inline">
             Property And Facility Management Demo Instance
@@ -41,9 +40,9 @@ const Header = ({ selectedModule, handleModuleChange, toggleSidebar }) => {
         </div>
 
         <div className="flex items-center space-x-4">
-        <Link to="https://amlaq.sa/" target="_blank"  className="bg-red-500 text-sm text-white px-2 py-1 rounded hidden md:inline">
+        {/* <Link to="https://amlaq.sa/" target="_blank"  className="bg-red-500 text-sm text-white px-2 py-1 rounded hidden md:inline">
         Rent Your Property
-          </Link>
+          </Link> */}
           <button className="border border-white-400 text-white px-4 py-1 rounded hover:bg-red-700 hidden md:inline">
             {selectedModule}
           </button>
@@ -108,7 +107,7 @@ const Header = ({ selectedModule, handleModuleChange, toggleSidebar }) => {
               <Link
                 to={module.href ? module.href : "/"}
                 key={module.name + i}
-                className={`flex items-center border-2 rounded-lg p-4 cursor-pointer transition-all w-full md:w-fit  
+                className={`flex items-center border-2 rounded-lg p-4 cursor-pointer transition-all w-full md:w-fit
       ${
         selectedModule === module.name
           ? "border-red-500 shadow-md"

@@ -166,7 +166,10 @@ import UnitReadiness from "./components/ImWorkOrderManagement/UnitReadiness";
 import DetailsUnitReadiness from "./components/ImWorkOrderManagement/DetailsUnitReadiness";
 import GeneralInspectionJobs from "./components/ImWorkOrderManagement/GeneralInspectionJobs";
 import DetailsGeneralInspectionJobs from "./components/ImWorkOrderManagement/DetailsGeneralInspectionJobs";
-
+import SheduleBoard from "./components/bireportmanagement/planner/SheduleBoard";
+import BiReportManagementSheduleBoard from "./components/bireportmanagement/planner/SheduleBoard";
+import AmenityBookingBoard from "./components/bireportmanagement/planner/AmenityBookingBoard";
+import ParkingBookingBoard from "./components/bireportmanagement/planner/ParkingBookingBoard";
 const App = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [selectedModule, setSelectedModule] = useState("Inspection Management");
@@ -206,6 +209,18 @@ const App = () => {
           />
           <div className="flex-1 bg-gray-100 overflow-y-scroll scrollbar-hide  ">
             <Routes>
+              <Route
+                path="/parking-booking-board"
+                element={<ParkingBookingBoard />}
+              />
+              <Route
+                path="/amenity-booking-board"
+                element={<AmenityBookingBoard />}
+              />
+              <Route
+                path="/bi-and-report-management/planner/shedule-board"
+                element={<BiReportManagementSheduleBoard />}
+              />
               <Route
                 path="/bi-and-report-management/planner/resource-board"
                 element={<BiReportManagementResourseBoard />}
