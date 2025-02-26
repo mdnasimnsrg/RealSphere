@@ -179,6 +179,10 @@ import MMLeaveTimeOffBoard from "./components/maintenancemanagement/planner/MMLe
 import MMDutyRoasterBoard from "./components/maintenancemanagement/planner/MMDutyRosterBoard";
 import Contract360 from "./components/bireportmanagement/business360/Contract360";
 import LoginActivityReport from "./components/bireportmanagement/organization/LoginActivityReport";
+import PropertyOverviewReport from "./components/bireportmanagement/property-administration/PropertyOverviewReport";
+import UnitDetailsReport from "./components/bireportmanagement/property-administration/UnitDetailsReport";
+import UnitOccupancyReport from "./components/bireportmanagement/property-administration/UnitOccupancyReport";
+import UnitPricingReport from "./components/bireportmanagement/property-administration/UnitPricingReport";
 const App = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [selectedModule, setSelectedModule] = useState("Inspection Management");
@@ -218,6 +222,22 @@ const App = () => {
           />
           <div className="flex-1 bg-gray-100 overflow-y-scroll scrollbar-hide  ">
             <Routes>
+              <Route
+                path="/unit-pricing-report"
+                element={<UnitPricingReport />}
+              />
+              <Route
+                path="/unit-occupancy-report"
+                element={<UnitOccupancyReport />}
+              />
+              <Route
+                path="/unit-details-report"
+                element={<UnitDetailsReport />}
+              />
+              <Route
+                path="/property-overview-report"
+                element={<PropertyOverviewReport />}
+              />
               <Route
                 path="/login-activity-report"
                 element={<LoginActivityReport />}

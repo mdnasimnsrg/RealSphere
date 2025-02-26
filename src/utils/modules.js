@@ -345,13 +345,13 @@ const modules = [
         icon: <FiFileText />,
         subLinks: [
           {
-            href: "/property-administration",
+            href: "#",
             name: "Property Administration",
           },
-          { href: "/property-report", name: "Property Overview Report" },
-          { href: "/unit-report", name: "Unit Overview Report" },
-          { href: "/occupancy-report", name: "Unit Occupancy Report" },
-          { href: "/pricing-report", name: "Unit Pricing Report" },
+          { href: "/property-overview-report", name: "Property Overview Report" },
+          { href: "/unit-details-report", name: "Unit Overview Report" },
+          { href: "/unit-occupancy-report", name: "Unit Occupancy Report" },
+          { href: "/unit-pricing-report", name: "Unit Pricing Report" },
         ],
       },
       {
